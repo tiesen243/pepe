@@ -1,0 +1,45 @@
+{
+  "name": "@mizuki/auth-service",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./dist/main.mjs",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/main.mjs",
+  "module": "./dist/main.mjs",
+  "types": "./dist/main.d.mts",
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
+    "dev": "bun run --env-file ../../.env --hot ./src/main.ts --port $TURBO_MFE_PORT",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "start": "bun run --env-file ../../.env ./dist/main.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@mizuki/prettier-config",
+  "dependencies": {
+    "@elysiajs/cors": "^1.4.0",
+    "@mizuki/lib": "workspace:*",
+    "@mizuki/trpc": "workspace:*",
+    "@mizuki/validators": "workspace:*",
+    "drizzle-orm": "catalog:db",
+    "elysia": "^1.4.15",
+    "postgres": "catalog:db"
+  },
+  "devDependencies": {
+    "@mizuki/eslint-config": "workspace:*",
+    "@mizuki/prettier-config": "workspace:*",
+    "@mizuki/tsconfig": "workspace:*",
+    "drizzle-kit": "catalog:db",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  }
+}

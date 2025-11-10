@@ -1,18 +1,16 @@
 {
-  "name": "@mizuki/validators",
+  "name": "@mizuki/trpc",
   "version": "0.0.1",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "exports": {
-    "./*": {
-      "default": "./dist/*.mjs",
-      "types": "./dist/*.d.mts"
-    },
+    ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
-  "main": "./dist/env.mjs",
-  "module": "./dist/env.mjs",
-  "types": "./dist/env.d.mts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "scripts": {
     "build": "tsdown",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
@@ -23,7 +21,9 @@
   },
   "prettier": "@mizuki/prettier-config",
   "dependencies": {
-    "zod": "^4.1.12"
+    "@mizuki/validators": "workspace:*",
+    "@trpc/server": "catalog:trpc",
+    "superjson": "catalog:trpc"
   },
   "devDependencies": {
     "@mizuki/eslint-config": "workspace:*",

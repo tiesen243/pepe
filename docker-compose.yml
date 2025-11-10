@@ -1,0 +1,28 @@
+services:
+  db-auth:
+    image: postgres:18.0
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: '${AUTH_POSTGRES_USER}'
+      POSTGRES_PASSWORD: '${AUTH_POSTGRES_PASSWORD}'
+      POSTGRES_DB: '${AUTH_POSTGRES_DATABASE}'
+    ports:
+      - '${AUTH_POSTGRES_PORT:-5432}:5432'
+    volumes:
+      - pg_auth:/var/lib/postgresql
+
+  db-post:
+    image: postgres:18.0
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: '${POST_POSTGRES_USER}'
+      POSTGRES_PASSWORD: '${POST_POSTGRES_PASSWORD}'
+      POSTGRES_DB: '${POST_POSTGRES_DATABASE}'
+    ports:
+      - '${POST_POSTGRES_PORT:-5432}:5432'
+    volumes:
+      - pg_post:/var/lib/postgresql
+
+volumes:
+  pg_auth:
+  pg_post:

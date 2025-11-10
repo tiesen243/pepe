@@ -43,17 +43,7 @@
       "outputLogs": "new-only"
     }
   },
-  "globalEnv": [
-    "NEXT_PUBLIC_API_URL",
-    "VITE_API_URL",
-
-    "DATABASE_URL",
-
-    "AUTH_DISCORD_ID",
-    "AUTH_DISCORD_SECRET",
-
-    "PORT"
-  ],
+  "globalEnv": ["PORT", "TURBO_MFE_PORT"],
   "globalPassThroughEnv": [
     "CI",
     "MODE",

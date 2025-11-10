@@ -8,7 +8,18 @@ export const env = createEnv({
       z.enum(['development', 'production', 'test']),
       'development',
     ),
-    DATABASE_URL: z.string(),
+
+    AUTH_POSTGRES_HOST: z.string(),
+    AUTH_POSTGRES_PORT: z.coerce.number(),
+    AUTH_POSTGRES_USER: z.string(),
+    AUTH_POSTGRES_PASSWORD: z.string(),
+    AUTH_POSTGRES_DATABASE: z.string(),
+
+    POST_POSTGRES_HOST: z.string(),
+    POST_POSTGRES_PORT: z.coerce.number(),
+    POST_POSTGRES_USER: z.string(),
+    POST_POSTGRES_PASSWORD: z.string(),
+    POST_POSTGRES_DATABASE: z.string(),
 
     // Vercel environment variables
     VERCEL: z.optional(z.string()),
@@ -27,3 +38,5 @@ export const env = createEnv({
     !!process.env.CI ||
     process.env.npm_lifecycle_event === 'lint',
 })
+
+export { createEnv }

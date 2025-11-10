@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/microfrontends.json",
+  "applications": {
+    "mizuki-web": {
+      "packageName": "@mizuki/web",
+      "development": { "local": 3000, "fallback": "mizuki.tiesen.id.vn" }
+    },
+    "mizuki-auth": {
+      "packageName": "@mizuki/auth-service",
+      "routing": [{ "paths": ["/api/auth", "/api/auth/:path*"] }],
+      "development": {
+        "local": 3001,
+        "fallback": "auth.mizuki.tiesen.id.vn"
+      }
+    }
+  }
+}
