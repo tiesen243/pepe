@@ -1,5 +1,6 @@
-import Elysia, { status, t } from 'elysia'
+import Elysia, { status } from 'elysia'
 
+import { config } from '@/config'
 import { validateSessionToken } from '@/lib/session'
 
 export const getSession = new Elysia({
@@ -11,5 +12,5 @@ export const getSession = new Elysia({
     const session = await validateSessionToken(token)
     return status('OK', session)
   },
-  { cookie: t.Cookie({ 'auth.token': t.Optional(t.String()) }) },
+  { cookie: config.cookie },
 )

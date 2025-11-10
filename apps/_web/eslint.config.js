@@ -1,8 +1,8 @@
 import { defineConfig } from 'eslint/config'
 
-import baseConfig, { restrictEnvAccess } from '@mizuki/eslint-config/base'
-import nextConfig from '@mizuki/eslint-config/next'
-import reactConfig from '@mizuki/eslint-config/react'
+import baseConfig, { restrictEnvAccess } from '@pepe/eslint-config/base'
+import nextConfig from '@pepe/eslint-config/next'
+import reactConfig from '@pepe/eslint-config/react'
 
 export default defineConfig(
   {

@@ -1,6 +1,6 @@
 import { defineConfig } from 'eslint/config'
 
-import baseConfig from '@mizuki/eslint-config/base'
+import baseConfig from '@pepe/eslint-config/base'
 
 export default defineConfig(
   {

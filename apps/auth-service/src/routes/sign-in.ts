@@ -1,6 +1,7 @@
 import { and, eq, or } from 'drizzle-orm'
 import Elysia, { env, status, t } from 'elysia'
 
+import { config } from '@/config'
 import { db } from '@/lib/db'
 import { accounts, users } from '@/lib/db/schema'
 import { Password } from '@/lib/password'
@@ -52,7 +53,7 @@ export const signIn = new Elysia({
     })
   },
   {
-    cookie: t.Cookie({ 'auth.token': t.Optional(t.String()) }),
+    cookie: config.cookie,
     body: t.Object({ identifier: t.String(), password: t.String() }),
   },
 )

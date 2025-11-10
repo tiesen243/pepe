@@ -1,5 +1,5 @@
 {
-  "name": "@mizuki/eslint-config",
+  "name": "@pepe/eslint-config",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -13,7 +13,7 @@
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "typecheck": "tsc --noEmit"
   },
-  "prettier": "@mizuki/prettier-config",
+  "prettier": "@pepe/prettier-config",
   "dependencies": {
     "@eslint-react/eslint-plugin": "^2.3.1",
     "@eslint/js": "^9.39.1",
@@ -25,8 +25,8 @@
     "typescript-eslint": "^8.46.3"
   },
   "devDependencies": {
-    "@mizuki/prettier-config": "workspace:*",
-    "@mizuki/tsconfig": "workspace:*",
+    "@pepe/prettier-config": "workspace:*",
+    "@pepe/tsconfig": "workspace:*",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"

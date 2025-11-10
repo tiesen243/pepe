@@ -1,5 +1,5 @@
 {
-  "extends": "@mizuki/tsconfig/react.json",
+  "extends": "@pepe/tsconfig/react.json",
   "compilerOptions": {
     "rootDir": "src",
     "paths": {

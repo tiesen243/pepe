@@ -1,4 +1,4 @@
-import '@mizuki/validators/env'
+import '@pepe/validators/env'
 
 import type { NextConfig } from 'next'
 
@@ -11,7 +11,7 @@ const nextConfig = {
     turbopackFileSystemCacheForDev: true,
   },
 
-  transpilePackages: ['@mizuki/trpc', '@mizuki/ui', '@mizuki/validators'],
+  transpilePackages: ['@pepe/trpc', '@pepe/ui', '@pepe/validators'],
 } satisfies NextConfig
 
 export default nextConfig

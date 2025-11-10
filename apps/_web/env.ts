@@ -1,4 +1,4 @@
-import { createEnv } from '@mizuki/validators/env'
+import { createEnv } from '@pepe/validators/env'
 
 export const env = createEnv({
   server: {},

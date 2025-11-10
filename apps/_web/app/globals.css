@@ -1,4 +1,4 @@
-@import '@mizuki/ui/tailwind.css';
+@import '@pepe/ui/tailwind.css';
 @source '../../../packages/ui/src/**/*.tsx';
 
 @theme inline {

@@ -1,16 +1,16 @@
 {
   "$schema": "https://openapi.vercel.sh/microfrontends.json",
   "applications": {
-    "mizuki-web": {
-      "packageName": "@mizuki/web",
-      "development": { "local": 3000, "fallback": "mizuki.tiesen.id.vn" }
+    "pepe-web": {
+      "packageName": "@pepe/web",
+      "development": { "local": 3000, "fallback": "pepe.tiesen.id.vn" }
     },
-    "mizuki-auth": {
-      "packageName": "@mizuki/auth-service",
+    "pepe-auth": {
+      "packageName": "@pepe/auth-service",
       "routing": [{ "paths": ["/api/auth", "/api/auth/:path*"] }],
       "development": {
         "local": 3001,
-        "fallback": "auth.mizuki.tiesen.id.vn"
+        "fallback": "auth.pepe.tiesen.id.vn"
       }
     }
   }

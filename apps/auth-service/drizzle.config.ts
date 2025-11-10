@@ -1,6 +1,6 @@
 import { defineConfig } from 'drizzle-kit'
 
-import { env } from '@mizuki/validators/env'
+import { env } from '@pepe/validators/env'
 
 export default defineConfig({
   dialect: 'postgresql',

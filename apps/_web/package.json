@@ -1,5 +1,5 @@
 {
-  "name": "@mizuki/web",
+  "name": "@pepe/web",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -12,11 +12,11 @@
     "start": "bun run --env-file ../../.env next start",
     "typecheck": "bun --env-file ../../.env next typegen && tsc --noEmit"
   },
-  "prettier": "@mizuki/prettier-config",
+  "prettier": "@pepe/prettier-config",
   "dependencies": {
-    "@mizuki/trpc": "workspace:*",
-    "@mizuki/ui": "workspace:*",
-    "@mizuki/validators": "workspace:*",
+    "@pepe/trpc": "workspace:*",
+    "@pepe/ui": "workspace:*",
+    "@pepe/validators": "workspace:*",
     "@tanstack/react-query": "catalog:",
     "@trpc/client": "catalog:trpc",
     "@trpc/tanstack-react-query": "catalog:trpc",
@@ -26,10 +26,11 @@
     "superjson": "catalog:trpc"
   },
   "devDependencies": {
-    "@mizuki/eslint-config": "workspace:*",
-    "@mizuki/prettier-config": "workspace:*",
-    "@mizuki/tsconfig": "workspace:*",
+    "@pepe/eslint-config": "workspace:*",
+    "@pepe/prettier-config": "workspace:*",
+    "@pepe/tsconfig": "workspace:*",
     "@tailwindcss/postcss": "catalog:tailwind",
+    "@types/node": "catalog:",
     "@types/react": "catalog:react",
     "@types/react-dom": "catalog:react",
     "eslint": "catalog:",

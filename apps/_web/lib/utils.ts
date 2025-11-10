@@ -1,4 +1,4 @@
-import { env } from '@mizuki/validators/env'
+import { env } from '@pepe/validators/env'
 
 export function getBaseUrl(): string {
   if (typeof window !== 'undefined') return window.location.origin

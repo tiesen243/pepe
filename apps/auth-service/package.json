@@ -1,5 +1,5 @@
 {
-  "name": "@mizuki/auth-service",
+  "name": "@pepe/auth-service",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -22,20 +22,20 @@
     "start": "bun run --env-file ../../.env ./dist/main.mjs",
     "typecheck": "tsc --noEmit"
   },
-  "prettier": "@mizuki/prettier-config",
+  "prettier": "@pepe/prettier-config",
   "dependencies": {
     "@elysiajs/cors": "^1.4.0",
-    "@mizuki/lib": "workspace:*",
-    "@mizuki/trpc": "workspace:*",
-    "@mizuki/validators": "workspace:*",
+    "@pepe/lib": "workspace:*",
+    "@pepe/trpc": "workspace:*",
+    "@pepe/validators": "workspace:*",
     "drizzle-orm": "catalog:db",
     "elysia": "^1.4.15",
     "postgres": "catalog:db"
   },
   "devDependencies": {
-    "@mizuki/eslint-config": "workspace:*",
-    "@mizuki/prettier-config": "workspace:*",
-    "@mizuki/tsconfig": "workspace:*",
+    "@pepe/eslint-config": "workspace:*",
+    "@pepe/prettier-config": "workspace:*",
+    "@pepe/tsconfig": "workspace:*",
     "drizzle-kit": "catalog:db",
     "eslint": "catalog:",
     "prettier": "catalog:",

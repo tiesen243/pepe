@@ -1,6 +1,6 @@
 import { defineConfig } from 'eslint/config'
 
-import baseConfig, { restrictEnvAccess } from '@mizuki/eslint-config/base'
+import baseConfig, { restrictEnvAccess } from '@pepe/eslint-config/base'
 
 export default defineConfig(
   {

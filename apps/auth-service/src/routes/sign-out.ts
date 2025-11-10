@@ -1,5 +1,6 @@
-import Elysia, { status, t } from 'elysia'
+import Elysia, { status } from 'elysia'
 
+import { config } from '@/config'
 import { invalidateSession, validateSessionToken } from '@/lib/session'
 
 export const signOut = new Elysia({
@@ -17,5 +18,5 @@ export const signOut = new Elysia({
 
     return status('OK', { message: 'Sign-out successful' })
   },
-  { cookie: t.Cookie({ 'auth.token': t.Optional(t.String()) }) },
+  { cookie: config.cookie },
 )

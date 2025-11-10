@@ -1,5 +1,5 @@
 {
-  "name": "mizuki",
+  "name": "pepe",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -20,10 +20,10 @@
     "lint:ws": "bunx sherif@latest",
     "typecheck": "turbo run typecheck"
   },
-  "prettier": "@mizuki/prettier-config",
+  "prettier": "@pepe/prettier-config",
   "devDependencies": {
-    "@mizuki/prettier-config": "workspace:*",
-    "@mizuki/tsconfig": "workspace:*",
+    "@pepe/prettier-config": "workspace:*",
+    "@pepe/tsconfig": "workspace:*",
     "@types/bun": "^1.3.2",
     "turbo": "^2.6.0"
   },
@@ -35,6 +35,7 @@
   "catalog": {
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
     "@tanstack/react-query": "^5.90.3",
+    "@types/node": "^24.10.0",
     "eslint": "^9.38.0",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.1",

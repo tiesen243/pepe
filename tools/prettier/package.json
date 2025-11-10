@@ -1,5 +1,5 @@
 {
-  "name": "@mizuki/prettier-config",
+  "name": "@pepe/prettier-config",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -11,13 +11,13 @@
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "typecheck": "tsc --noEmit"
   },
-  "prettier": "@mizuki/prettier-config",
+  "prettier": "@pepe/prettier-config",
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
     "prettier-plugin-tailwindcss": "^0.7.1"
   },
   "devDependencies": {
-    "@mizuki/tsconfig": "workspace:*",
+    "@pepe/tsconfig": "workspace:*",
     "prettier": "catalog:",
     "typescript": "catalog:"
   },

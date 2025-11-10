@@ -1,7 +1,7 @@
 import { relations } from 'drizzle-orm'
 import { pgTable, uniqueIndex } from 'drizzle-orm/pg-core'
 
-import { createId } from '@mizuki/lib/id'
+import { createId } from '@pepe/lib/id'
 
 export const users = pgTable('users', (t) => ({
   id: t.varchar({ length: 24 }).primaryKey().$default(createId).notNull(),

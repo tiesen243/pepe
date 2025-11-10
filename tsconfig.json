@@ -1,5 +1,5 @@
 {
-  "extends": "@mizuki/tsconfig/base.json",
+  "extends": "@pepe/tsconfig/base.json",
   "compilerOptions": {
     "types": []
   }

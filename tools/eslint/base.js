@@ -5,7 +5,7 @@ import { defineConfig } from 'eslint/config'
 import tseslint from 'typescript-eslint'
 
 /**
- * All packages that leverage @mizuki/env should use this rule
+ * All packages that leverage @pepe/env should use this rule
  */
 export const restrictEnvAccess = defineConfig(
   { ignores: ['**/env.ts'] },
@@ -18,7 +18,7 @@ export const restrictEnvAccess = defineConfig(
           object: 'process',
           property: 'env',
           message:
-            "Use `import { env } from '@mizuki/env'` instead to ensure validated types.",
+            "Use `import { env } from '@pepe/env'` instead to ensure validated types.",
         },
       ],
       'no-restricted-imports': [
@@ -27,7 +27,7 @@ export const restrictEnvAccess = defineConfig(
           name: 'process',
           importNames: ['env'],
           message:
-            "Use `import { env } from '@mizuki/env'` instead to ensure validated types.",
+            "Use `import { env } from '@pepe/env'` instead to ensure validated types.",
         },
       ],
     },

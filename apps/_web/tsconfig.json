@@ -1,5 +1,5 @@
 {
-  "extends": "@mizuki/tsconfig/next.json",
+  "extends": "@pepe/tsconfig/next.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

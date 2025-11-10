@@ -1,8 +1,7 @@
 import '@/app/globals.css'
 
 import { Geist, Geist_Mono } from 'next/font/google'
-
-import { cn, ThemeProvider } from '@mizuki/ui'
+import { cn, ThemeProvider } from '@pepe/ui'
 
 import { createMetadata } from '@/lib/metadata'
 

@@ -1,4 +1,4 @@
-# mizuki
+# pepe
 
 A modern full-stack application built with TypeScript and Turbo.
 
@@ -27,8 +27,8 @@ A modern full-stack application built with TypeScript and Turbo.
 1. Clone the repository
 
 ```bash
-git clone git@github.com:your-username/mizuki.git
-cd mizuki
+git clone git@github.com:your-username/pepe.git
+cd pepe
 ```
 
 2. Install dependencies:
@@ -58,7 +58,7 @@ bun run dev
 ## Project Structure
 
 ```text
-mizuki/
+pepe/
 ├── apps/                    # Applications
 │   └── nextjs/              # Nextjs app
 ├── packages/                # Shared packages

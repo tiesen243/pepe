@@ -1,5 +1,5 @@
 {
-  "name": "@mizuki/validators",
+  "name": "@pepe/validators",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -21,14 +21,14 @@
     "typecheck": "tsc --noEmit",
     "~dev": "tsdown --watch ./src"
   },
-  "prettier": "@mizuki/prettier-config",
+  "prettier": "@pepe/prettier-config",
   "dependencies": {
     "zod": "^4.1.12"
   },
   "devDependencies": {
-    "@mizuki/eslint-config": "workspace:*",
-    "@mizuki/prettier-config": "workspace:*",
-    "@mizuki/tsconfig": "workspace:*",
+    "@pepe/eslint-config": "workspace:*",
+    "@pepe/prettier-config": "workspace:*",
+    "@pepe/tsconfig": "workspace:*",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "tsdown": "catalog:",
