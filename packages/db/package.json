@@ -1,0 +1,48 @@
+{
+  "name": "@mizuki/db",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./schema": "./dist/schema.mjs",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "db:generate": "bun run with-env drizzle-kit generate",
+    "db:migrate": "bun run with-env drizzle-kit migrate",
+    "db:push": "bun run with-env drizzle-kit push",
+    "db:studio": "bun run with-env drizzle-kit studio",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env --",
+    "~dev": "tsdown --watch ./src"
+  },
+  "prettier": "@mizuki/prettier-config",
+  "dependencies": {
+    "@mizuki/validators": "workspace:*",
+    "drizzle-orm": "^0.44.7",
+    "postgres": "^3.4.7"
+  },
+  "devDependencies": {
+    "@mizuki/eslint-config": "workspace:*",
+    "@mizuki/prettier-config": "workspace:*",
+    "@mizuki/tsconfig": "workspace:*",
+    "dotenv-cli": "catalog:",
+    "drizzle-kit": "^0.31.6",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "catalog:",
+    "prettier-plugin-tailwindcss": "catalog:"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "extends": "@mizuki/tsconfig/base.json",
+  "compilerOptions": {
+    "types": []
+  }
+}

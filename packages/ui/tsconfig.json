@@ -1,0 +1,12 @@
+{
+  "extends": "@mizuki/tsconfig/react.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/utils": ["./src/index.ts"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
