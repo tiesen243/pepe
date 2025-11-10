@@ -9,6 +9,8 @@ export const env = createEnv({
       'development',
     ),
 
+    APP_URL: z._default(z.string(), 'localhost:3024'),
+
     AUTH_POSTGRES_HOST: z.string(),
     AUTH_POSTGRES_PORT: z.coerce.number(),
     AUTH_POSTGRES_USER: z.string(),

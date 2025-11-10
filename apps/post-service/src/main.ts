@@ -1,13 +1,13 @@
 import { cors } from '@elysiajs/cors'
 import { Elysia, status } from 'elysia'
 
-import { db } from '@/lib/db'
-import { getSession } from '@/routes/get-session'
-import { signIn } from '@/routes/sign-in'
-import { signOut } from '@/routes/sign-out'
-import { signUp } from '@/routes/sign-up'
+import { fetchRequestHandler } from '@pepe/trpc'
 
-const server = new Elysia({ prefix: '/api/auth', aot: true })
+import { db } from '@/lib/db'
+import { postServiceRouter } from '@/router'
+import { createTRPCContent } from '@/trpc'
+
+const server = new Elysia({ prefix: '/api/posts', aot: true })
   .use(cors())
   .get('/health', async () => {
     try {
@@ -15,7 +15,7 @@ const server = new Elysia({ prefix: '/api/auth', aot: true })
       return status('OK', {
         status: 'ok',
         details: {
-          service: 'Auth Service is running',
+          service: 'Post Service is running',
           database: 'connected',
           uptime: process.uptime(),
           timestamp: new Date().toISOString(),
@@ -33,17 +33,26 @@ const server = new Elysia({ prefix: '/api/auth', aot: true })
       })
     }
   })
+  .all('/*', async ({ request }) => {
+    let response: Response
+    if (request.method === 'OPTIONS')
+      response = new Response(null, { status: 204 })
+    else
+      response = await fetchRequestHandler({
+        endpoint: '/api/posts',
+        req: request,
+        router: postServiceRouter,
+        createContext: () => createTRPCContent(request),
+      })
 
-  .use(getSession)
-  .use(signUp)
-  .use(signIn)
-  .use(signOut)
+    return response
+  })
 
   .compile()
 
 // eslint-disable-next-line no-restricted-properties
-server.listen(process.env.TURBO_MFE_PORT ?? 3001, (server) => {
-  console.log(`Auth Service running at ${server.url}`)
+server.listen(process.env.TURBO_MFE_PORT ?? 3002, (server) => {
+  console.log(`Post Service is running at ${server.url}`)
 })
 
 export type AuthService = typeof server

@@ -1,5 +1,7 @@
 import { and, eq, or } from 'drizzle-orm'
-import Elysia, { env, status, t } from 'elysia'
+import Elysia, { env, status } from 'elysia'
+
+import { AuthValidators } from '@pepe/validators/auth'
 
 import { config } from '@/config'
 import { db } from '@/lib/db'
@@ -52,8 +54,5 @@ export const signIn = new Elysia({
       data: { userId: userWithAccount.id },
     })
   },
-  {
-    cookie: config.cookie,
-    body: t.Object({ identifier: t.String(), password: t.String() }),
-  },
+  { cookie: config.cookie, body: AuthValidators.signIn },
 )

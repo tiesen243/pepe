@@ -33,7 +33,7 @@ export async function validateSessionToken(token: string) {
       result.expires = newExpires
     }
 
-    return result
+    return { user: result.user, expires: result.expires }
   } catch {
     return { user: null, expires: new Date() }
   }

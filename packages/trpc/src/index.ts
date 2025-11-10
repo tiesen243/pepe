@@ -37,33 +37,26 @@ const createCallerFactory = t.createCallerFactory
 
 const createTRPCRouter = t.router
 
-const loggingMiddleware = t.middleware(
-  async ({ ctx, next, type, path, meta }) => {
+const loggingMiddleware = t.middleware(async ({ next, type, path, meta }) => {
+  const start = performance.now()
+  const result = await next()
+  const end = performance.now()
+  console.log(`[tRPC] took ${(end - start).toFixed(2)}ms to execute`)
+
+  if (result.ok) {
+    const codeMap = { query: 200, mutation: 201, subscription: 200 } as const
     console.log(
-      '[tRPC] >>> Request from',
-      ctx.headers.get('x-trpc-source') ?? 'unknown',
-      'by',
-      'guest',
-      `at ${path}`,
+      `[tRPC] <<< [${type}] ${path} ${codeMap[type]}: ${meta?.message ?? 'Success'}`,
     )
+  }
 
-    const start = performance.now()
-    const result = await next()
-    const end = performance.now()
-    console.log(`[tRPC] took ${(end - start).toFixed(2)}ms to execute`)
-
-    if (result.ok) {
-      const codeMap = { query: 200, mutation: 201, subscription: 200 } as const
-      console.log(
-        `[tRPC] <<< [${type}] ${path} ${codeMap[type]}: ${meta?.message ?? 'Success'}`,
-      )
-    }
-
-    return result
-  },
-)
+  return result
+})
 
 const publicProcedure = t.procedure.use(loggingMiddleware)
+
+export { TRPCError } from '@trpc/server'
+export { fetchRequestHandler } from '@trpc/server/adapters/fetch'
 
 export type { TRPCMeta, TRPCContext }
 export {

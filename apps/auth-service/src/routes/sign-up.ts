@@ -1,5 +1,7 @@
 import { eq, or } from 'drizzle-orm'
-import Elysia, { status, t } from 'elysia'
+import Elysia, { status } from 'elysia'
+
+import { AuthValidators } from '@pepe/validators/auth'
 
 import { db } from '@/lib/db'
 import { accounts, users } from '@/lib/db/schema'
@@ -42,10 +44,6 @@ export const signUp = new Elysia({
     })
   },
   {
-    body: t.Object({
-      username: t.String(),
-      email: t.String({ format: 'email' }),
-      password: t.String(),
-    }),
+    body: AuthValidators.signUp,
   },
 )

@@ -52,6 +52,31 @@
       "version": "0.0.1",
       "dependencies": {
         "@elysiajs/cors": "^1.4.0",
+        "@elysiajs/eden": "^1.4.4",
+        "@pepe/lib": "workspace:*",
+        "@pepe/validators": "workspace:*",
+        "drizzle-orm": "catalog:db",
+        "elysia": "^1.4.15",
+        "postgres": "catalog:db",
+      },
+      "devDependencies": {
+        "@pepe/eslint-config": "workspace:*",
+        "@pepe/prettier-config": "workspace:*",
+        "@pepe/tsconfig": "workspace:*",
+        "drizzle-kit": "catalog:db",
+        "eslint": "catalog:",
+        "prettier": "catalog:",
+        "tsdown": "catalog:",
+        "typescript": "catalog:",
+      },
+    },
+    "apps/post-service": {
+      "name": "@pepe/post-service",
+      "version": "0.0.1",
+      "dependencies": {
+        "@elysiajs/cors": "^1.4.0",
+        "@elysiajs/eden": "^1.4.4",
+        "@pepe/auth-service": "workspace:*",
         "@pepe/lib": "workspace:*",
         "@pepe/trpc": "workspace:*",
         "@pepe/validators": "workspace:*",
@@ -282,6 +307,8 @@
 
     "@elysiajs/cors": ["@elysiajs/cors@1.4.0", "", { "peerDependencies": { "elysia": ">= 1.4.0" } }, "sha512-pb0SCzBfFbFSYA/U40HHO7R+YrcXBJXOWgL20eSViK33ol1e20ru2/KUaZYo5IMUn63yaTJI/bQERuQ+77ND8g=="],
 
+    "@elysiajs/eden": ["@elysiajs/eden@1.4.4", "", { "peerDependencies": { "elysia": ">= 1.4.0-exp.0" } }, "sha512-/LVqflmgUcCiXb8rz1iRq9Rx3SWfIV/EkoNqDFGMx+TvOyo8QHAygFXAVQz7RHs+jk6n6mEgpI6KlKBANoErsQ=="],
+
     "@emnapi/core": ["@emnapi/core@1.7.0", "", { "dependencies": { "@emnapi/wasi-threads": "1.1.0", "tslib": "^2.4.0" } }, "sha512-pJdKGq/1iquWYtv1RRSljZklxHCOCAJFJrImO5ZLKPJVJlVUcs8yFwNQlqS0Lo8xT1VAXXTCZocF9n26FWEKsw=="],
 
     "@emnapi/runtime": ["@emnapi/runtime@1.7.0", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-oAYoQnCYaQZKVS53Fq23ceWMRxq5EhQsE0x0RdQ55jT7wagMu5k+fS39v1fiSLrtrLQlXwVINenqhLMtTrV/1Q=="],
@@ -481,6 +508,8 @@
     "@pepe/eslint-config": ["@pepe/eslint-config@workspace:tools/eslint"],
 
     "@pepe/lib": ["@pepe/lib@workspace:packages/lib"],
+
+    "@pepe/post-service": ["@pepe/post-service@workspace:apps/post-service"],
 
     "@pepe/prettier-config": ["@pepe/prettier-config@workspace:tools/prettier"],
 

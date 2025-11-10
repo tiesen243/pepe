@@ -12,6 +12,14 @@
         "local": 3001,
         "fallback": "auth.pepe.tiesen.id.vn"
       }
+    },
+    "pepe-post": {
+      "packageName": "@pepe/post-service",
+      "routing": [{ "paths": ["/api/posts", "/api/posts/:path*"] }],
+      "development": {
+        "local": 3002,
+        "fallback": "post.pepe.tiesen.id.vn"
+      }
     }
   }
 }
